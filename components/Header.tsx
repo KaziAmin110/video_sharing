@@ -33,7 +33,6 @@ const Header = ({subHeader, title, userImg} : SharedHeaderProps) => {
                 <input type="text" placeholder='Search for videos, tags, folders...' />
                 <Image src="/assets/icons/search.svg" alt="search" width={16} height={16} />
             </div>
-
             <DropdownList />
         </section>
     </header>
