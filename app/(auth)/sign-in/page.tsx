@@ -6,8 +6,9 @@ import { authClient } from "@/lib/auth-client";
 
 const Page = () => {
   const handleSignIn = async () => {
-    return await authClient.signIn.social({provider: "google"});
-  }
+    return await authClient.signIn.social({ provider: "google" });
+  };
+
   return (
     <main className="sign-in">
       <aside className="testimonial">
@@ -71,12 +72,17 @@ const Page = () => {
             time!
           </p>
           <button onClick={handleSignIn}>
-            <Image src="/assets/icons/google.svg" alt="Google" width={22} height={22} />
+            <Image
+              src="/assets/icons/google.svg"
+              alt="Google"
+              width={22}
+              height={22}
+            />
             <span>Sign in with Google</span>
           </button>
         </section>
       </aside>
-      <div className="overlay"/>
+      <div className="overlay" />
     </main>
   );
 };
