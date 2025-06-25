@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Kazi-Amin-s-workspace-v48j3h.us-east-1.xata.sh/db/jsm_SnapCast",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
