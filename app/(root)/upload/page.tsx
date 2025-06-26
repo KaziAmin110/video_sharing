@@ -12,23 +12,22 @@ import { useFileInput } from "@/lib/hooks/useFileInput";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
-const uploadFileToBunny = (
+const uploadFileToBunny = async (
   file: File,
   uploadUrl: string,
   accessKey: string
 ): Promise<void> => {
-  return fetch(uploadUrl, {
+  const response = await fetch(uploadUrl, {
     method: "PUT",
     headers: {
       AccessKey: accessKey,
       "Content-Type": file.type,
     },
     body: file,
-  }).then((response) => {
-    if (!response.ok) {
-      throw new Error("Failed to upload file to Bunny");
-    }
   });
+  if (!response.ok) {
+    throw new Error("Failed to upload file to Bunny");
+  }
 };
 
 const Page = () => {
